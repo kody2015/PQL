@@ -110,6 +110,9 @@ public class PQLTestAPQLExecutes {
 		assertEquals(true, res.contains("3.pnml"));
 	}
 
+	
+	
+	
 	@Test
 	public void test003() throws ClassNotFoundException, SQLException {
 		PQLQueryResult queryResult = PQLTestAPQLExecutes.pqlAPI.query("SELECT * FROM * WHERE Executes(<\"A\",\"B\",\"C\",*>);");
@@ -295,5 +298,18 @@ public class PQLTestAPQLExecutes {
 		assertEquals(true, res.contains("6.pnml"));
 		assertEquals(true, res.contains("7.pnml"));
 		assertEquals(true, res.contains("9.pnml"));
+	}
+	
+	@Test
+	public void test_callu() throws ClassNotFoundException, SQLException {
+		PQLQueryResult queryResult = PQLTestAPQLExecutes.pqlAPI.query("SELECT * FROM * WHERE Executes(<\"A\",\"B\",\"C\",*>);");
+		assertEquals(0,queryResult.getNumberOfParseErrors());
+		assertEquals(5,queryResult.getSearchResults().size());
+		Set<String> res = queryResult.getSearchResults();
+		assertEquals(true, res.contains("3.pnml"));
+		assertEquals(true, res.contains("5.pnml"));
+		assertEquals(true, res.contains("6.pnml"));
+		assertEquals(true, res.contains("7.pnml"));
+		assertEquals(true, res.contains("9.pnml"));	
 	}
 }

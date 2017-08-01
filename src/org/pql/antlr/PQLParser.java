@@ -6,6 +6,9 @@ import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import java.util.Iterator;
 import java.util.ArrayList;
 
@@ -559,13 +562,25 @@ public class PQLParser extends Parser {
 			setState(188);
 			switch (_input.LA(1)) {
 			case UNIVERSE:
+				JOptionPane.showMessageDialog(null, "universe");
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(179); universe();
 				}
 				break;
-			case STRING:
+				
+				//new editssssssss
+			/*case STRING:
+				JOptionPane.showMessageDialog(null, "string");
+				 enterOuterAlt(_localctx, 3);
+				{
+				setState(573); //folder_heiarchy();
+				}
+				 	
+				//this is where we need to edit vv*/
+				
 			case LP:
+				JOptionPane.showMessageDialog(null, "LP");
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(180); location();
@@ -600,6 +615,33 @@ public class PQLParser extends Parser {
 		return _localctx;
 	}
 
+	//new edits!!!!!!!!!!1
+	/*private void folder_heiarchy() {
+		// TODO Auto-generated method stub
+		//LocationContext _localctx = new LocationContext(_ctx, getState());
+		//enterRule(_localctx, 18, RULE_location);
+		try {
+			setState(192);
+			switch (_input.LA(1)) {
+			case STRING:
+				enterOuterAlt(_localctx, 1);
+				{
+				setState(190); ;
+				}
+				break;
+			default:
+				throw new NoViableAltException(this);
+			}}
+		
+			catch (RecognitionException re) {
+				_localctx.exception = re;
+				_errHandler.reportError(this, re);
+				_errHandler.recover(this, re);
+			}
+		
+		}	
+	}*/
+	
 	public static class LocationContext extends ParserRuleContext {
 		public NestedQueryContext nestedQuery() {
 			return getRuleContext(NestedQueryContext.class,0);
@@ -636,7 +678,9 @@ public class PQLParser extends Parser {
 			case LP:
 				enterOuterAlt(_localctx, 2);
 				{
+				JOptionPane.showMessageDialog(null, "nest_query guys");
 				setState(191); nestedQuery();
+				
 				}
 				break;
 			default:
@@ -749,6 +793,8 @@ public class PQLParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(198); match(STRING);
+			JOptionPane.showMessageDialog(null, "My Goodness, this is so concise");
+			//HEREEEEEEEEEEEEE 
 			}
 		}
 		catch (RecognitionException re) {
